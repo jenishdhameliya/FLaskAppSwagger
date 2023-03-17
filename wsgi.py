@@ -9,7 +9,7 @@ app = Flask(__name__)
 # RESTFULL API __init__
 api = Api(app)
 
-
+ALLOWED_HOSTS = ['*']
 # SWAGGER CONFIG
 SWAGGER_URL = ''
 API_URL = '/static/swagger.json'
