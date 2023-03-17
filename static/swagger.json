@@ -1,0 +1,86 @@
+{
+  "info": {
+    "description": "swagger get-data",
+    "version": "1.0.0",
+    "title": "Swagger-GET-DATA",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "swagger": "2.0",
+
+  "components": {
+    "schemas": {
+      "GetData": {
+        "type": "object",
+        "properties": {
+          "ClusterName": {
+            "type": "string"
+          },
+          "month": {
+            "type": "string"
+          },
+          "Year": {
+            "type": "string"
+          },
+          "col": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/get-data": {
+      "get": {
+        "tags": [
+          "Get All todos from API"
+        ],
+        "summary": "Get All todos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ClusterName",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The database cluster name"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The month whose data is required"
+          },
+          {
+            "in": "query",
+            "name": "Year",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The Year whose data is required"
+          },
+          {
+            "in": "query",
+            "name": "col",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The name of specific column or 'all'"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/GetData"
+            }
+          }
+        }
+      }
+    }
+  }
+}
